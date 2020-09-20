@@ -1,0 +1,99 @@
+@import "../../assets/scss/helpers/mixin.scss";
+@import "../../assets/scss/helpers/variables.scss";
+
+.booking {
+    background-image: $gradient-color;
+    padding: 3rem 0;
+    .container {
+        @include container;
+        .book-form {
+            display: flex;
+            justify-content: space-between;
+            .form-group {
+                flex: 0 0 18%;
+                &:first-child {
+                    flex: 0 0 23%;
+                }
+                &:nth-child(2) {
+                    flex: 0 0 13%;
+                }
+                .input-label {
+                    display: block;
+                    font-size: 1.3rem;
+                    color: $white-color;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+                .input,
+                .options {
+                    min-width: 10rem;
+                    outline: none;
+                    width: 100%;
+                    padding: 1rem;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    color: #a5a5a5;
+                    resize: none;
+                    option {
+                        text-transform: uppercase;
+                    }
+                    &:nth-child(2) {
+                        padding: 1rem 0;
+                    }
+                }
+                .size-inputs {
+                    display: flex;
+                    width: 40%;
+                    .input {
+                        border: 1px solid $dark-color;
+                        border-radius: 0.3rem;
+                        margin-right: 1rem;
+                    }
+                }
+                .single-extra {
+                    display: flex;
+                    align-items: center;
+                    padding: 1.25rem 1rem 0.5rem;
+                    label {
+                        font-size: 1.3rem;
+                        color: $white-color;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        min-width: 10rem;
+                        margin-right: 2rem;
+                    }
+                    .input-check {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive-1200 {
+    .booking .container .book-form {
+        .form-group {
+            flex: 0 0 13%;
+        }
+    }
+}
+@include responsive-1000 {
+    .booking .container .book-form {
+        flex-direction: column;
+        .form-group {
+            .size-inputs {
+                flex-direction: column;
+                width: 100%;
+                .input {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
+@include responsive-768 {
+}

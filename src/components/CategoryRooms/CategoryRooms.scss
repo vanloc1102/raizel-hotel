@@ -1,0 +1,96 @@
+@import "../../assets/scss/helpers/mixin.scss";
+@import "../../assets/scss/helpers/variables.scss";
+
+.hotels {
+    .container {
+        @include container;
+        .section-head {
+            text-align: center;
+            margin-bottom: 5rem;
+            .heading {
+                display: block;
+                font-size: 4rem;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .sub-heading {
+                font-size: 1.7rem;
+                font-family: "Courgette", cursive;
+                font-weight: 300;
+                color: #a5a5a5;
+            }
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            grid-gap: 2.5rem;
+            .featured-hotels {
+                height: 35rem;
+                color: $white-color;
+                padding: 1rem;
+                position: relative;
+                z-index: 0;
+                overflow: hidden;
+
+                &:hover .hotel-image {
+                    transform: scale(1.1);
+                }
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: $purple-transparent-alt;
+                    z-index: -1;
+                }
+            }
+            .grid-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .hotel-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    transition: transform 0.4s;
+                }
+                .hotel-name {
+                    font-size: 2.6rem;
+                    font-weight: bold;
+                }
+                .hotel-price {
+                    font-size: 1.8rem;
+                    margin-bottom: 4rem;
+                }
+                .btn {
+                    @include btn;
+                    .dots {
+                        @include dots;
+                    }
+                }
+                .btn {
+                    @include btn-gradient;
+                }
+            }
+        }
+    }
+}
+.line-seprate {
+    width: 60%;
+    height: 3px;
+    margin: 0 auto;
+    background: $gradient-color;
+}
+
+@include responsive-1000 {
+    .hotels {
+        padding: 4rem 0;
+    }
+}

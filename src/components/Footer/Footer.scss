@@ -1,0 +1,67 @@
+@import "../../assets/scss/helpers/mixin.scss";
+@import "../../assets/scss/helpers/variables.scss";
+
+.footer {
+    padding: 5rem 0;
+    overflow-x: hidden;
+    color: $white-color;
+    background-color: $purple-solid;
+    .container {
+        @include container;
+        .footer-content {
+            display: flex;
+            .footer-content-brand {
+                margin-bottom: 0;
+                flex: 0 0 60%;
+                .footer-content-brand .logo {
+                    width: 80%;
+                }
+                .paragraph {
+                    margin: 2.5rem 0;
+                }
+            }
+            .social-media-wrap {
+                flex: 0 0 40%;
+                margin-left: 2.5rem;
+                .footer-heading {
+                    margin-bottom: 5rem;
+                    text-transform: uppercase;
+                }
+                .social-media {
+                    display: flex;
+                    .sm-link {
+                        width: 4rem;
+                        height: 4rem;
+                        font-size: 2rem;
+                        border: 2px solid $yellow-solid;
+                        border-radius: 50%;
+                        display: flex;
+                        margin-right: 1rem;
+                        transition: background-color 0.5s;
+                        i {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive-1200 {
+}
+@include responsive-1000 {
+}
+@include responsive-768 {
+    .footer .container .footer-content {
+        flex-direction: column;
+        flex-basis: 100%;
+        .social-media-wrap {
+            flex-basis: 100%;
+            margin-left: 0;
+            .footer-heading {
+                margin-bottom: 2.5rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

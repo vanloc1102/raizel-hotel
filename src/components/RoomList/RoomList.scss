@@ -1,0 +1,46 @@
+@import "../../assets/scss/helpers/mixin.scss";
+@import "../../assets/scss/helpers/variables.scss";
+
+.roomslist {
+    padding: 5rem 0;
+    .roomslist-center {
+        width: 95vw;
+        max-width: 1170px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        grid-row-gap: 2rem;
+        grid-column-gap: 30px;
+        img {
+            display: block;
+            width: 100%;
+        }
+        .room-name {
+            text-transform: capitalize;
+            font-size: 1.5rem;
+        }
+        .paragraph {
+            display: none;
+        }
+        .btn.rooms-btn {
+            display: block;
+        }
+    }
+}
+
+@include responsive-1200 {
+}
+@include responsive-1000 {
+    .roomslist {
+        .roomslist-center {
+            width: 90vw;
+        }
+    }
+}
+@include responsive-768 {
+    .roomslist {
+        .roomslist-center {
+            width: 80vw;
+        }
+    }
+}
